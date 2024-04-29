@@ -1,0 +1,23 @@
+{
+  "name": "Firebase Extension",
+  "version": "1.0.0",
+  "manifest_version": 3,
+
+  "permissions": ["activeTab", "tabs"],
+
+  "content_script":[{
+    "matches":["<all_urls>"],
+    "js":["[main.js"],
+    "run_at":"document_end"
+  }],
+
+  "action": {
+    "default_title":"plugin",
+    "default_popup": "main.html",
+    "default_icon": "logo.png"
+  },
+  "background":{
+    "service-worker": "firebase-main.js"
+  }
+  
+}
